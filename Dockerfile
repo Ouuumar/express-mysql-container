@@ -10,6 +10,4 @@ COPY . .
 
 EXPOSE 5001
 
-VOLUME ["/app/node_modules"]
-
 CMD ["npm", "run", "dev"] 

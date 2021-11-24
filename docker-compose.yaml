@@ -7,9 +7,7 @@ services:
       dockerfile: Dockerfile 
     ports:
       - 5001:5001
-    volumes:
-      - .:/app
-      - '/app/app.js'
+
     depends_on:
       - mysql_server
 
