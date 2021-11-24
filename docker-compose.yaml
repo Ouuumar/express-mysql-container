@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    ports:
+      - 5001:5001
+    volumes:
+      - .:/app
+      - '/app/app.js'
+    depends_on:
+      - mysql_server
+
+  mysql_server:
+    image: mysql:8.0
+    environment:
+      - MYSQL_DATABASE=test_db
+      - MYSQL_USER=Omar
+      - MYSQL_PASSWORD=omarallouache
+      - MYSQL_ROOT_PASSWORD=omarallouache
